@@ -75,15 +75,15 @@ export function Navbar() {
                     <Tab icon={<FontDownloadRoundedIcon />} label="alkomat"></Tab>
                     <Tab icon={<AddRoundedIcon />} label="dodaj drinka"></Tab>
                     <Tab icon={<AccountCircleRoundedIcon />} label="konto" onClick={toggleDrawer('right', true)}></Tab>
-                    <SwipeableDrawer
-                        anchor="right"
-                        open={state.right}
-                        onClose={toggleDrawer('right', false)}
-                        onOpen={toggleDrawer('right', true)}
-                    >
-                        {sideList('right')}
-                    </SwipeableDrawer>
                 </Tabs>
+                <SwipeableDrawer
+                    anchor="right"
+                    open={state.right}
+                    onClose={toggleDrawer('right', false)}
+                    onOpen={toggleDrawer('right', true)}
+                >
+                    {sideList('right')}
+                </SwipeableDrawer>
             </Paper>
         </AppBar>
     );

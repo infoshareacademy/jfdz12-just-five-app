@@ -1,6 +1,5 @@
 {
-    "drinks": [
-        {
+    "drinks": [{
             "id": 1,
             "name": "Mohito",
             "alko": true,
@@ -47,11 +46,9 @@
             "img_url": "x3.img",
             "power": "0%",
             "description": "orzeźwiający",
-            "recipe": "Sok grejpfruitowy, ananasowy i blue curracao wymieszaj w shakerze. Brzegi kieliszka zanurz w wodzie, po czym przyłóż go dnem do góry do rozsypanych na talerzyku wiórków kokosowych i przyozdób limonką. Do przygotowanego kieliszka do margarity przelej ostrożnie drink z shakera", 
+            "recipe": "Sok grejpfruitowy, ananasowy i blue curracao wymieszaj w shakerze. Brzegi kieliszka zanurz w wodzie, po czym przyłóż go dnem do góry do rozsypanych na talerzyku wiórków kokosowych i przyozdób limonką. Do przygotowanego kieliszka do margarity przelej ostrożnie drink z shakera",
             "origin": "Peru"
         },
-
-
         {
             "id": 4,
             "name": "Pinacolada",

@@ -8,13 +8,13 @@ import IconButton from '@material-ui/core/IconButton';
 import LocalBarOutlinedIcon from '@material-ui/icons/LocalBarOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const UserFavList = () => {
+const UserFavList = (props) => {
     return (
         <ListItem>
             <ListItemIcon>
                 <LocalBarOutlinedIcon color="secondary" />
             </ListItemIcon>
-            <ListItemText primary="Margharita" secondary="Papryka, Cebula" />
+            <ListItemText primary={props.name} secondary={props.recipe} />
             <ListItemSecondaryAction>
                 <IconButton aria-label="delete" color="secondary">
                     <DeleteIcon />

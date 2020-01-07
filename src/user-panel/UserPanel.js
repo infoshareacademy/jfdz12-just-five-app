@@ -11,25 +11,42 @@ import UserFavList from './UserFavList'
 class UserPanel extends React.Component {
     state = {
         drinks: [],
-        users: []
+        users: [],
+        loggedUser: 1,
     }
 
 
     componentDidMount() {
-        fetch("./drinks.json").then(r => r.json()).then(data => {
-            this.setState({
-                drinks: data.drinks
+        fetch("./drinks.json")
+            .then(r => r.json())
+            .then(data => {
+                this.setState({
+                    drinks: data.drinks
+                })
             })
-        })
-        fetch("./users.json").then(r => r.json()).then(data => {
-            console.log('data.ingredients:', data);
-            this.setState({
-                users: data.users
+            .catch((error) => {
+                console.error(error);
+            });
+        fetch("./users.json")
+            .then(r => r.json())
+            .then(data => {
+                this.setState({
+                    users: data.users
+                })
             })
-        })
     }
 
     render() {
+        const { users } = this.state
+        const drinks = this.state.drinks.map(drink => (
+            <UserFavList
+                key={drink.id}
+                name={drink.name}
+                recipe={drink.recipe}
+                delete={this.handleDelete}
+            />
+        ))
+
         return (
             <div>
                 <Fab
@@ -50,21 +67,21 @@ class UserPanel extends React.Component {
                         title="Jan Kowalski" />
                     <CardContent>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Wiek: 25 lat.
+                            Wiek: {this.state.users.age} lat.
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Waga: 85 kg.
+                            Waga: {this.state.users.weight} kg.
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Wzrost: 180 cm.
+                            Wzrost: {this.state.users.height} cm.
                         </Typography>
                     </CardContent>
                     <Divider />
                     <List >
-                        <UserFavList />
+                        {drinks}
                     </List>
                 </Card>
-            </div>
+            </div >
         )
     }
 

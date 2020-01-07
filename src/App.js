@@ -43,11 +43,8 @@ class Drinks extends React.Component {
       })
     })
     fetch("./ingredients.json").then(r => r.json()).then(data => {
-      console.log('data.ingredients:', data);
       this.setState({
         ingredients: data.ingredients
-
-
       })
     })
   }
@@ -57,7 +54,6 @@ class Drinks extends React.Component {
       <div>
         Lista Drinków:
         <div>
-
           {
             this.state.drinks.map(drink => <Drink key={drink.id} name={drink.name} recipe={drink.recipe} />)
           }
